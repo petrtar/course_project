@@ -1,6 +1,6 @@
 import { Suspense, useContext, useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import { classNames } from "./halpers/classNames/classNames";
+import { classNames } from "./helpers/classNames/classNames";
 
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
