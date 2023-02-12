@@ -23,6 +23,9 @@
         ],
         "src/shared/config/routeConfig/routeConfig.tsx": [
             "*"
+        ],
+        "src/widgets/PageError/ui/PageError.tsx": [
+            "Произошла непредвиденная ошибка"
         ]
     }
 }
