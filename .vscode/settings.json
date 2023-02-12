@@ -11,5 +11,18 @@
     "stylelint.validate": ["css", "scss"],
     "editor.codeActionsOnSave": {
         "source.fixAll.stylelint": true
-    }    
+    },
+    "i18n-ally.extract.ignoredByFiles": {
+        "src/pages/AboutPage/ui/AboutPage.tsx": [
+            "О сайте",
+            "О сайте"
+        ],
+        "src/pages/NotFoundPage/ui/NotFoundPage.tsx": [
+            "Страница не найдена",
+            "Страница не найдена"
+        ],
+        "src/shared/config/routeConfig/routeConfig.tsx": [
+            "*"
+        ]
+    }
 }
