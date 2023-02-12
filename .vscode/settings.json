@@ -3,5 +3,13 @@
         "public/locales",
         "src/shared/config/i18n"
     ],
-    "i18n-ally.sourceLanguage": "ru"
+    "i18n-ally.sourceLanguage": "ru",
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "stylelint.enable": true,
+    "stylelint.validate": ["css", "scss"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": true
+    }    
 }

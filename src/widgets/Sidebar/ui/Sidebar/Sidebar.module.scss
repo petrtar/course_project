@@ -2,16 +2,15 @@
     height: calc(100vh - var(--navbar-height));
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
-
     position: relative;
     transition: width 0.3s;
 }
 
-.collapsed  {
+.collapsed {
     width: var(--sidebar-width-collapsed);
 }
 
-.swithers  {
+.swithers {
     position: absolute;
     bottom: 20px;
     display: flex;
