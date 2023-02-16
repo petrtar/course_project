@@ -2,6 +2,9 @@
     "Тестовый пример": "Test example",
     "Перевод": "Translate",
     "Язык": "English",
+    "Короткий язык": "En",
     "Произошла непредвиденная ошибка": "An unexpected error has occurred",
-    "Обновить страницу": "Refresh the page"
+    "Обновить страницу": "Refresh the page",
+    "Главная": "Main",
+    "О нас": "About us"
 }
