@@ -53,6 +53,8 @@ export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) 
     [cls.isClosing]: isClosing,
   };
 
+  if (!isOpen) return null;
+
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [])}>
