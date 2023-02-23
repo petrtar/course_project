@@ -7,7 +7,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = buildSvgLoader();
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    test: /\.(png|jpe?g|gif|woff2|woff|ttf)$/i,
     use: [
       {
         loader: "file-loader",
