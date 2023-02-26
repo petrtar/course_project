@@ -22,6 +22,6 @@
   "include": [
     "./config/jest/setupTest.ts",
     "src/**/*.tsx",
-    "src/**/*.ts",
+    "src/**/*.ts", "src/features/AuthByUsername/model/selectors/getLoginState",
   ],
 }
