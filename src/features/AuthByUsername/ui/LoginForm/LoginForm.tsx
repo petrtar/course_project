@@ -9,10 +9,10 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import { getLoginUsername } from "../../model/selectors/getLoginUsername";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading";
-import { getLoginError } from "../../model/selectors/getLoginError";
+import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
+import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 
 import cls from "./LoginForm.module.scss";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
