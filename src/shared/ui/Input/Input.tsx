@@ -26,7 +26,7 @@ export const Input: FC<InputProps> = memo(({ className, value, onChange, type = 
   };
 
   const onSelect = (e: React.SyntheticEvent<HTMLInputElement, Event>) => {
-    setCaretPosition(e.currentTarget.selectionStart);
+    setCaretPosition(e.currentTarget.selectionStart || 0);
   };
 
   useEffect(() => {
