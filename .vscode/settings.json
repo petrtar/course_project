@@ -27,5 +27,8 @@
         "src/widgets/PageError/ui/PageError.tsx": [
             "Произошла непредвиденная ошибка"
         ]
-    }
+    },
+    "cSpell.words": [
+        "inited"
+    ]
 }
