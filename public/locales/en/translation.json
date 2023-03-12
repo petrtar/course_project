@@ -15,5 +15,6 @@
     "Вы ввели неверный логин или пароль": "Incorrect username or password",
     "Выйти": "Logout",
     "Укажите валюту": "Select currency",
-    "Укажите страну": "Select state"
+    "Укажите страну": "Select state",
+    "Статьи": "Articles"
 }

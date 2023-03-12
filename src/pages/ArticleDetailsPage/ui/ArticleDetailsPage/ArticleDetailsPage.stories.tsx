@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { <FTName> } from "./[FTName]";
+import ArticleDetailsPage from "./ArticleDetailsPage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProviders";
 
 export default {
-  title: "shared/<FTName>",
-  component: <FTName>,
+  title: "shared/ArticleDetailsPage",
+  component: ArticleDetailsPage,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof <FTName>>;
+} as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof <FTName>> = (args) => <<FTName> {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
