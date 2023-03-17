@@ -16,7 +16,7 @@ interface ArticleTextBlockComponentProps {
 export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> = memo(({ className, block }) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
+    <div className={classNames("", {}, [className])}>
       {block.title && <Text title={block.title} className={cls.title} />}
       {block.paragraphs.map((paragraph) => (
         <Text key={paragraph} text={paragraph} className={cls.paragraph} />
