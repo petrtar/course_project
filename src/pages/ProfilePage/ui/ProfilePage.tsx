@@ -21,6 +21,7 @@ import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 const reducers: ReducerList = {
   profile: profileReducer,
@@ -48,11 +49,9 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     [ValidateProfileError.INCORRECT_AGE]: t("Некорректный возраст"),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   const onChangeName = useCallback(
     (value?: string) => {
