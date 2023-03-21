@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { FC, useCallback, useEffect } from "react";
+import { FC, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -34,6 +35,7 @@ interface ProfilePageProps {
 const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -50,7 +52,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   };
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) dispatch(fetchProfileData(id));
   });
 
   const onChangeName = useCallback(

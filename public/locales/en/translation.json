@@ -17,5 +17,7 @@
     "Укажите валюту": "Select currency",
     "Укажите страну": "Select state",
     "Статьи": "Articles",
-    "Комментарии отсутствуют": "No comments"
+    "Комментарии отсутствуют": "No comments",
+    "Введите текст комментария": "Enter comment text",
+    "Отправить": "Send"
 }
