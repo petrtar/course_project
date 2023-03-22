@@ -1,11 +1,9 @@
-import { FC, memo } from "react";
-import { useTranslation } from "react-i18next";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Article, ArticleList, ArticleView } from "entities/Article";
-
-import { classNames } from "shared/lib/classNames/classNames";
-
-import cls from "./ArticlesPage.module.scss";
+import { ArticleList } from "./ArticleList";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProviders";
+import { Article, ArticleView } from "../../model/types/article";
 
 const article = {
   id: "1",
@@ -82,17 +80,40 @@ const article = {
   ],
 } as Article;
 
-interface ArticlesPageProps {
-  className?: string;
-}
+export default {
+  title: "entities/Article/ArticleList",
+  component: ArticleList,
+  argTypes: {
+    backgroundColor: { control: "color" },
+  },
+} as ComponentMeta<typeof ArticleList>;
 
-const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
-  const { t } = useTranslation("article");
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList isLoading={true} view={ArticleView.BIG} articles={[]} />
-    </div>
-  );
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+
+export const LoadingBig = Template.bind({});
+LoadingBig.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.BIG,
 };
 
-export default memo(ArticlesPage);
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
+  isLoading: true,
+  articles: [],
+  view: ArticleView.SMALL,
+};
+
+export const ListSmall = Template.bind({});
+ListSmall.args = {
+  isLoading: false,
+  articles: new Array(9).fill(0).map((item, index) => ({ ...article, id: String(index) })),
+  view: ArticleView.SMALL,
+};
+
+export const ListBig = Template.bind({});
+ListBig.args = {
+  isLoading: false,
+  articles: new Array(9).fill(0).map((item, index) => ({ ...article, id: String(index) })),
+  view: ArticleView.BIG,
+};
