@@ -24,6 +24,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo(({ className, article, view }) => {
+  console.log("🚀 ~ constArticleListItem:FC<ArticleListItemProps>=memo ~ article:", article);
   const { t } = useTranslation("article");
   const navigate = useNavigate();
 
@@ -31,15 +32,13 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(({ className, arti
     navigate(RouterPath.article_details + article.id);
   }, [navigate, article.id]);
 
-  const types = () => <Text text={article.type.join(", ")} className={cls.types} />;
-  const views = () => {
-    return (
-      <>
-        <Text text={String(article.views)} className={cls.views} />
-        <Icon Svg={EyeIcon} />
-      </>
-    );
-  };
+  const types = <Text text={article.type.join(", ")} className={cls.types} />;
+  const views = (
+    <>
+      <Text text={String(article.views)} className={cls.views} />
+      <Icon Svg={EyeIcon} />
+    </>
+  );
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
