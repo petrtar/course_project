@@ -6,7 +6,7 @@ import { getArticlePageHasMore, getArticlePageIsLoading, getArticlePageNum } fro
 import { articlesPageActions } from "../../slices/articlesPageSlice";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
-export const fetchNextArticlePage = createAsyncThunk<void, void, ThunkConfig<string>>("articlesPage/fetchNewArticlesPage", async (_, thunkApi) => {
+export const fetchNextArticlePage = createAsyncThunk<void, void, ThunkConfig<string>>("articlesPage/fetchNextArticlePage", async (_, thunkApi) => {
   const { getState, dispatch } = thunkApi;
 
   const hasMore = getArticlePageHasMore(getState());

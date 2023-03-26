@@ -8,11 +8,7 @@ import { $api } from "shared/api/api";
 import { createReducerManager } from "./reducerManager";
 import { StateSchema, ThunkExtraArg } from "./StateSchema";
 
-export function createReduxStore(
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void
-) {
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
@@ -23,7 +19,6 @@ export function createReduxStore(
 
   const extra: ThunkExtraArg = {
     api: $api,
-    navigate,
   };
 
   const store = configureStore({

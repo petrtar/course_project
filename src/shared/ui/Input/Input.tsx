@@ -12,7 +12,7 @@ interface InputProps extends HTMLInputProps {
   readonly?: boolean;
 }
 
-export const Input: FC<InputProps> = memo(({ className, value, onChange, type = "text", placeholder, autoFocus, readonly, ...otherProps }) => {
+export const Input: FC<InputProps> = memo(({ className, value = "", onChange, type = "text", placeholder, autoFocus, readonly, ...otherProps }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
 
