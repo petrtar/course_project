@@ -12,6 +12,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from "features/addCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments/comments";
@@ -52,12 +53,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   });
 
   if (!id) {
-    return <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>{t("Статья не найдена")}</div>;
+    return <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>{t("Статья не найдена")}</Page>;
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames("", {}, [className])}>
+      <Page className={classNames("", {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t("Назад к списку")}
         </Button>
@@ -65,7 +66,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <Text className={cls.commentTitle} title={t("Комментарии")} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

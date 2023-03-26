@@ -25,13 +25,14 @@ interface ArticleListProps {
 export const ArticleList: FC<ArticleListProps> = memo(({ className, articles, isLoading, view = ArticleView.SMALL }) => {
   const { t } = useTranslation("article");
 
-  if (isLoading) {
-    return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{getSkeleton(view)}</div>;
-  }
-
   const renderArticle = (article: Article) => {
     return <ArticleListItem key={article.id} className={cls.card} article={article} view={view} />;
   };
 
-  return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{!!articles.length ? articles.map(renderArticle) : null}</div>;
+  return (
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      {!!articles.length ? articles.map(renderArticle) : null}
+      {isLoading && getSkeleton(view)}
+    </div>
+  );
 });

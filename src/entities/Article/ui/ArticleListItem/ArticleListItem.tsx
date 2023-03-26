@@ -24,7 +24,6 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo(({ className, article, view }) => {
-  console.log("🚀 ~ constArticleListItem:FC<ArticleListItemProps>=memo ~ article:", article);
   const { t } = useTranslation("article");
   const navigate = useNavigate();
 
