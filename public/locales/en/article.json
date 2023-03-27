@@ -5,5 +5,13 @@
     "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
     "Комментарии": "Comments",
     "Читать далее...": "Read more...",
-    "Назад к списку": "Back to list"
+    "Назад к списку": "Back to list",
+    "Сортировать по": "Sort by",
+    "Поиск": "Search",
+    "по": "by",
+    "возрастанию": "ascending",
+    "убыванию": "descending",
+    "дате создания": "creation date",
+    "названию": "name",
+    "просмотрам": "views"
 }
