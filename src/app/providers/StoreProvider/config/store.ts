@@ -2,7 +2,7 @@ import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersM
 
 import { counterReducer } from "entities/Counter";
 import { userReducer } from "entities/User";
-import { NavigateOptions, To } from "react-router-dom";
+import { uiReducer } from "features/UI";
 import { $api } from "shared/api/api";
 
 import { createReducerManager } from "./reducerManager";
@@ -13,6 +13,7 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    ui: uiReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

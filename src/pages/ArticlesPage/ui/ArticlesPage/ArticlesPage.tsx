@@ -7,7 +7,7 @@ import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicM
 import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 import { articlesPageActions, articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
 import { getArticlePageError, getArticlePageIsLoading, getArticlePageView } from "../../model/selectors/articlesPageSelectors";
