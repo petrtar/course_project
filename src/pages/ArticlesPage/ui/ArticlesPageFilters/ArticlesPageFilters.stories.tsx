@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProviders";
 
 export default {
-  title: "shared/ArticlesPageFilters",
+  title: "pages/Article/ArticlesPageFilters",
   component: ArticlesPageFilters,
   argTypes: {
     backgroundColor: { control: "color" },

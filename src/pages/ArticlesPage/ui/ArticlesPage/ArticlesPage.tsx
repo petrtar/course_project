@@ -1,6 +1,7 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 import { ArticleList } from "entities/Article";
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -33,12 +34,14 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   const error = useSelector(getArticlePageError);
   const view = useSelector(getArticlePageView);
 
+  const [searchParams] = useSearchParams();
+
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlePage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   return (
