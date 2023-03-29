@@ -8,6 +8,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 
 import cls from "./Navbar.module.scss";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { Theme } from "app/providers/ThemeProviders";
 
 interface NavbarProps {
   className?: string;
@@ -36,6 +40,10 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
+        <Text className={cls.appName} title={t("Ulbi TV App")} theme={TextTheme.INVERTED} />
+        <AppLink to={RouterPath.article_create} theme={AppLinkTheme.SECONDARY}>
+          {t("Создать статью")}
+        </AppLink>
         <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
           {t("Выйти")}
         </Button>
