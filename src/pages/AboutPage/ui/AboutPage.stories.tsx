@@ -1,15 +1,15 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import AboutPage from "./AboutPage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProviders";
+import AboutPage from "./AboutPage";
 
 export default {
-  title: "pages/AboutPage",
-  component: AboutPage,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+    title: "pages/AboutPage",
+    component: AboutPage,
+    argTypes: {
+        backgroundColor: { control: "color" },
+    },
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;

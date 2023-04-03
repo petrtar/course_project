@@ -5,12 +5,12 @@ import { getUserAuthData } from "entities/User";
 import { RouterPath } from "shared/config/routeConfig/routeConfig";
 
 export function RequireAuth({ children }: { children: JSX.Element }) {
-  let auth = useSelector(getUserAuthData);
-  let location = useLocation();
+    const auth = useSelector(getUserAuthData);
+    const location = useLocation();
 
-  if (!auth) {
-    return <Navigate to={RouterPath.main} state={{ from: location }} replace />;
-  }
+    if (!auth) {
+        return <Navigate to={RouterPath.main} state={{ from: location }} replace />;
+    }
 
-  return children;
+    return children;
 }

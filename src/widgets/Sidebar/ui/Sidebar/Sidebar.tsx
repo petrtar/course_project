@@ -12,40 +12,52 @@ import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
-  className?: string;
+    className?: string;
 }
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
-  const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
-  const sidebarItemList = useSelector(getSidebarItems);
+    const sidebarItemList = useSelector(getSidebarItems);
 
-  const onToggle = () => {
-    setCollapsed((prev) => !prev);
-  };
+    const onToggle = () => {
+        setCollapsed((prev) => !prev);
+    };
 
-  const itemList = useMemo(
-    () => sidebarItemList.map((item) => <SidebarItem key={item.path} item={item} collapsed={collapsed} />),
-    [collapsed, sidebarItemList]
-  );
+    const itemList = useMemo(
+        () =>
+            sidebarItemList.map((item) => (
+                <SidebarItem
+                    key={item.path}
+                    item={item}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemList]
+    );
 
-  return (
-    <menu data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-      <Button
-        data-testid="sidebar-toggle"
-        onClick={onToggle}
-        className={cls.collapseBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
-        size={ButtonSize.L}
-        square
-      >
-        {collapsed ? ">" : "<"}
-      </Button>
-      <div className={cls.items}>{itemList}</div>
-      <div className={cls.swithers}>
-        <ThemeSwitcher />
-        <LangSwitcher short={collapsed} className={cls.lang} />
-      </div>
-    </menu>
-  );
+    return (
+        <menu
+            data-testid='sidebar'
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <Button
+                data-testid='sidebar-toggle'
+                onClick={onToggle}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                size={ButtonSize.L}
+                square
+            >
+                {collapsed ? ">" : "<"}
+            </Button>
+            <div className={cls.items}>{itemList}</div>
+            <div className={cls.swithers}>
+                <ThemeSwitcher />
+                <LangSwitcher short={collapsed} className={cls.lang} />
+            </div>
+        </menu>
+    );
 });

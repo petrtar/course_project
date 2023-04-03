@@ -11,35 +11,35 @@ import ArticleIcon from "shared/assets/icons/article.svg";
 import { SidebarItemType } from "../types/sidebar";
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
-  const sidebarItemList: SidebarItemType[] = [
-    {
-      path: RouterPath.main,
-      text: "Главная",
-      Icon: MainIcon,
-    },
-    {
-      path: RouterPath.about,
-      text: "О нас",
-      Icon: AboutIcon,
-    },
-  ];
+    const sidebarItemList: SidebarItemType[] = [
+        {
+            path: RouterPath.main,
+            text: "Главная",
+            Icon: MainIcon,
+        },
+        {
+            path: RouterPath.about,
+            text: "О нас",
+            Icon: AboutIcon,
+        },
+    ];
 
-  if (userData) {
-    sidebarItemList.push(
-      {
-        path: RouterPath.profile + userData?.id,
-        text: "Профиль",
-        Icon: ProfileIcon,
-        authOnly: true,
-      },
-      {
-        path: RouterPath.articles,
-        text: "Статьи",
-        Icon: ArticleIcon,
-        authOnly: true,
-      }
-    );
-  }
+    if (userData) {
+        sidebarItemList.push(
+            {
+                path: `${RouterPath.profile}${userData?.id}`,
+                text: "Профиль",
+                Icon: ProfileIcon,
+                authOnly: true,
+            },
+            {
+                path: RouterPath.articles,
+                text: "Статьи",
+                Icon: ArticleIcon,
+                authOnly: true,
+            }
+        );
+    }
 
-  return sidebarItemList;
+    return sidebarItemList;
 });

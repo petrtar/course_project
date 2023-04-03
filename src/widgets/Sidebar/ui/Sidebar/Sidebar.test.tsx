@@ -3,14 +3,14 @@ import { Sidebar } from "widgets/Sidebar";
 import { componentRender } from "shared/config/tests/componentRender/componentRender";
 
 describe("Sidebar", () => {
-  test("with only first param", () => {
-    componentRender(<Sidebar />);
-    expect(screen.getByTestId("sidebar")).toBeInTheDocument();
-  });
-  test("test toggle", () => {
-    componentRender(<Sidebar />);
-    const toggleBtn = screen.getByTestId("sidebar-toggle");
-    fireEvent.click(toggleBtn);
-    expect(screen.getByTestId("sidebar")).toHaveClass("collapsed");
-  });
+    test("with only first param", () => {
+        componentRender(<Sidebar />);
+        expect(screen.getByTestId("sidebar")).toBeInTheDocument();
+    });
+    test("test toggle", () => {
+        componentRender(<Sidebar />);
+        const toggleBtn = screen.getByTestId("sidebar-toggle");
+        fireEvent.click(toggleBtn);
+        expect(screen.getByTestId("sidebar")).toHaveClass("collapsed");
+    });
 });

@@ -13,43 +13,53 @@ import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 import cls from "./Page.module.scss";
 
 interface PageProps {
-  className?: string;
-  children: ReactNode;
-  onScrollEnd?: () => void;
+    className?: string;
+    children: ReactNode;
+    onScrollEnd?: () => void;
 }
 
-export const Page: FC<PageProps> = memo(({ className, children, onScrollEnd }) => {
-  const dispatch = useAppDispatch();
-  const { pathname } = useLocation();
+export const Page: FC<PageProps> = memo(
+    ({ className, children, onScrollEnd }) => {
+        const dispatch = useAppDispatch();
+        const { pathname } = useLocation();
 
-  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
-  const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
+        const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
+        const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-  const scrollPosition = useSelector((state: StateSchema) => getUiScrollByPath(state, pathname));
+        const scrollPosition = useSelector((state: StateSchema) =>
+            getUiScrollByPath(state, pathname)
+        );
 
-  useInfiniteScroll({
-    triggerRef,
-    wrapperRef,
-    callback: onScrollEnd,
-  });
+        useInfiniteScroll({
+            triggerRef,
+            wrapperRef,
+            callback: onScrollEnd,
+        });
 
-  useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition;
-  });
+        useInitialEffect(() => {
+            wrapperRef.current.scrollTop = scrollPosition;
+        });
 
-  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(
-      uiActions.setScrollPosition({
-        position: e.currentTarget.scrollTop,
-        path: pathname,
-      })
-    );
-  }, 500);
+        const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+            dispatch(
+                uiActions.setScrollPosition({
+                    position: e.currentTarget.scrollTop,
+                    path: pathname,
+                })
+            );
+        }, 500);
 
-  return (
-    <section onScroll={onScroll} ref={wrapperRef} className={classNames(cls.Page, {}, [className])}>
-      {children}
-      {!!onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
-    </section>
-  );
-});
+        return (
+            <section
+                onScroll={onScroll}
+                ref={wrapperRef}
+                className={classNames(cls.Page, {}, [className])}
+            >
+                {children}
+                {!!onScrollEnd && (
+                    <div className={cls.trigger} ref={triggerRef} />
+                )}
+            </section>
+        );
+    }
+);

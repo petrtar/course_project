@@ -7,9 +7,9 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Currency } from "../../model/types/currency";
 
 const options = [
-  { value: Currency.RUB, content: Currency.RUB },
-  { value: Currency.EUR, content: Currency.EUR },
-  { value: Currency.USD, content: Currency.USD },
+    { value: Currency.RUB, content: Currency.RUB },
+    { value: Currency.EUR, content: Currency.EUR },
+    { value: Currency.USD, content: Currency.USD },
 ];
 
 interface CurrencySelectProps {
@@ -20,23 +20,23 @@ interface CurrencySelectProps {
 }
 
 export const CurrencySelect: FC<CurrencySelectProps> = memo(({ className, value, onChange, readonly }) => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  const onChangeHandler = useCallback(
-    (value: string) => {
-      onChange?.(value as Currency);
-    },
-    [onChange]
-  );
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Currency);
+        },
+        [onChange]
+    );
 
-  return (
-    <Select
-      className={classNames("", {}, [className])}
-      label={t("Укажите валюту")}
-      value={value}
-      onChange={onChangeHandler}
-      options={options}
-      readonly={readonly}
-    />
-  );
+    return (
+        <Select
+            className={classNames("", {}, [className])}
+            label={t("Укажите валюту")}
+            value={value}
+            onChange={onChangeHandler}
+            options={options}
+            readonly={readonly}
+        />
+    );
 });

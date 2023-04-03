@@ -7,7 +7,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleDetails, ArticleList } from "entities/Article";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
-import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    DynamicModuleLoader,
+    ReducerList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { AddCommentForm } from "features/addCommentForm";
 import { Page } from "widgets/Page/Page";
@@ -25,51 +28,75 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import cls from "./ArticleDetailsPage.module.scss";
 
 const reducers: ReducerList = {
-  articleDetailsPage: articleDetailsPageReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 interface ArticleDetailsPageProps {
-  className?: string;
+    className?: string;
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
-  const { t } = useTranslation("article");
-  const { id } = useParams<{ id: string }>();
-  const dispatch = useDispatch();
+    const { t } = useTranslation("article");
+    const { id } = useParams<{ id: string }>();
+    const dispatch = useDispatch();
 
-  const comments = useSelector(getArticleComments.selectAll);
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
-  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
+    const comments = useSelector(getArticleComments.selectAll);
+    const recommendations = useSelector(getArticleRecommendations.selectAll);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendationsIsLoading = useSelector(
+        getArticleRecommendationsIsLoading
+    );
 
-  const onSendComment = useCallback(
-    (text: string) => {
-      dispatch(addCommentFormArticle(text));
-    },
-    [dispatch]
-  );
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentFormArticle(text));
+        },
+        [dispatch]
+    );
 
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
-  });
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
+    });
 
-  if (!id) {
-    return <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>{t("Статья не найдена")}</Page>;
-  }
+    if (!id) {
+        return (
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                {t("Статья не найдена")}
+            </Page>
+        );
+    }
 
-  return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames("", {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t("Рекомендуем")} />
-        <ArticleList target="_blank" articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t("Комментарии")} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </Page>
-    </DynamicModuleLoader>
-  );
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Page className={classNames("", {}, [className])}>
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                <Text
+                    size={TextSize.L}
+                    className={cls.commentTitle}
+                    title={t("Рекомендуем")}
+                />
+                <ArticleList
+                    target='_blank'
+                    articles={recommendations}
+                    isLoading={recommendationsIsLoading}
+                    className={cls.recommendations}
+                />
+                <Text
+                    size={TextSize.L}
+                    className={cls.commentTitle}
+                    title={t("Комментарии")}
+                />
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </Page>
+        </DynamicModuleLoader>
+    );
 };
 
 export default memo(ArticleDetailsPage);

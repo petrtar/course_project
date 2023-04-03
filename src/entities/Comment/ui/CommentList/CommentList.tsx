@@ -9,30 +9,39 @@ import { CommentCard } from "../CommentCard/CommentCard";
 import cls from "./CommentList.module.scss";
 
 interface CommentListProps {
-  className?: string;
-  comments?: Comment[];
-  isLoading?: boolean;
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
-export const CommentList: FC<CommentListProps> = memo(({ className, isLoading, comments }) => {
-  const { t } = useTranslation();
+export const CommentList: FC<CommentListProps> = memo(
+    ({ className, isLoading, comments }) => {
+        const { t } = useTranslation();
 
-  if (isLoading) {
-    return (
-      <div className={classNames("", {}, [className])}>
-        <CommentCard isLoading />
-        <CommentCard isLoading />
-        <CommentCard isLoading />
-      </div>
-    );
-  }
-  return (
-    <div className={classNames("", {}, [className])}>
-      {comments?.length ? (
-        comments.map((comment) => <CommentCard isLoading={isLoading} className={cls.comment} key={comment.id} comment={comment} />)
-      ) : (
-        <Text text={t("Комментарии отсутствуют")} />
-      )}
-    </div>
-  );
-});
+        if (isLoading) {
+            return (
+                <div className={classNames("", {}, [className])}>
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                </div>
+            );
+        }
+        return (
+            <div className={classNames("", {}, [className])}>
+                {comments?.length ? (
+                    comments.map((comment) => (
+                        <CommentCard
+                            isLoading={isLoading}
+                            className={cls.comment}
+                            key={comment.id}
+                            comment={comment}
+                        />
+                    ))
+                ) : (
+                    <Text text={t("Комментарии отсутствуют")} />
+                )}
+            </div>
+        );
+    }
+);
