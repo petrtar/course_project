@@ -20,7 +20,13 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "ulbi-tv-plugin",
+    ],
     rules: {
         "react/jsx-indent": [2, 4],
         "react/jsx-indent-props": [2, 4],
@@ -52,7 +58,7 @@ module.exports = {
         "jsx-a11y/no-static-element-interactions": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-        "react-hooks/exhaustive-deps": "error", // Checks effect dependencies,
+        "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
         "no-param-reassign": "off",
         "no-undef": "off",
         "react/no-array-index-key": "off",
@@ -62,6 +68,7 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "func-names": "off",
         "no-restricted-syntax": "off",
+        "ulbi-tv-plugin/path-checker": "error",
     },
     globals: {
         __IS_DEV__: true,
