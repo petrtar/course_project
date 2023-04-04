@@ -9,6 +9,7 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
+import { HStack } from "shared/ui/Stack";
 
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
@@ -48,7 +49,9 @@ const AddCommentForm: FC<addCommentFormProps> = memo(
 
         return (
             <DynamicModuleLoader reducers={reducers}>
-                <div
+                <HStack
+                    justify='between'
+                    max
                     className={classNames(cls.AddCommentForm, {}, [className])}
                 >
                     <Input
@@ -60,7 +63,7 @@ const AddCommentForm: FC<addCommentFormProps> = memo(
                     <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
                         {t("Отправить")}
                     </Button>
-                </div>
+                </HStack>
             </DynamicModuleLoader>
         );
     }
