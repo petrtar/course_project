@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 
@@ -34,7 +34,12 @@ const gapClasses: Record<flexGap, string> = {
     32: cls.gap32,
 };
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
+
+export interface FlexProps extends DivProps {
     className?: string;
     justify?: FlexJustify;
     align?: FlexAlign;
