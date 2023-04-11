@@ -21,5 +21,6 @@
     "Введите текст комментария": "Enter comment text",
     "Отправить": "Send",
     "Ulbi TV App": "Ulbi TV App",
-    "Создать статью": "Create article"
+    "Создать статью": "Create article",
+    "Ошибка при загрузке статей": "Error loading articles"
 }
