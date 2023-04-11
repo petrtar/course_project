@@ -129,6 +129,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             theme={TextTheme.ERROR}
                             text={validateErrorTranslates[err]}
                             key={err}
+                            data-testid='EditableProfileCard.Error'
                         />
                     ))}
                 <VStack max className={classNames("", {}, [className])}>
