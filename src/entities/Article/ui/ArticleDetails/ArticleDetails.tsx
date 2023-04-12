@@ -37,7 +37,7 @@ const reducers: ReducerList = {
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(
