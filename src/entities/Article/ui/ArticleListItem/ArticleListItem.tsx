@@ -11,15 +11,11 @@ import { RouterPath } from "shared/config/routeConfig/routeConfig";
 
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { AppLink } from "shared/ui/AppLink/AppLink";
-import {
-    Article,
-    ArticleBlockType,
-    ArticleTextBlock,
-    ArticleView,
-} from "../../model/types/article";
+import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 import cls from "./ArticleListItem.module.scss";
+import { ArticleBlockType, ArticleView } from "../../model/const/const";
 
 interface ArticleListItemProps {
     className?: string;

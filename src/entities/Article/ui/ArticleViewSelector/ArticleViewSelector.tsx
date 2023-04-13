@@ -6,9 +6,9 @@ import { Icon } from "shared/ui/Icon/Icon";
 
 import ListIcon from "shared/assets/icons/list.svg";
 import TiledIcon from "shared/assets/icons/tiled.svg";
-import { ArticleView } from "../../model/types/article";
 
 import cls from "./ArticleViewSelector.module.scss";
+import { ArticleView } from "../../model/const/const";
 
 const viewTypes = [
     {

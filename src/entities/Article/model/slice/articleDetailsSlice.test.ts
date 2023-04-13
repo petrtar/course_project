@@ -1,5 +1,6 @@
+import { ArticleBlockType, ArticleType } from "../const/const";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
-import { Article, ArticleBlockType, ArticleType } from "../types/article";
+import { Article } from "../types/article";
 import { ArticleDetailsSchema } from "../types/ArticleDetailsSchema";
 import { articleDetailsReducer } from "./articleDetailsSlice";
 
@@ -80,13 +81,23 @@ const data: Article = {
 describe("articleDetailsSlice.test", () => {
     test("test fetch article by id service pending", () => {
         const state: DeepPartial<ArticleDetailsSchema> = { isLoading: false };
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending
+            )
+        ).toEqual({
             isLoading: true,
         });
     });
     test("test fetch article by id service fulfilled", () => {
         const state: DeepPartial<ArticleDetailsSchema> = { isLoading: true };
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(data, "", ""))).toEqual({
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(data, "", "")
+            )
+        ).toEqual({
             isLoading: false,
             data,
         });
