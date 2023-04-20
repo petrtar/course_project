@@ -17,6 +17,16 @@ export default ({ config }: { config: webpack.Configuration }) => {
         buildLocales: "",
     };
 
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        "@/shared": path.resolve(__dirname, "..", "..", "src", "shared"),
+        "@/entities": path.resolve(__dirname, "..", "..", "src", "entities"),
+        "@/features": path.resolve(__dirname, "..", "..", "src", "features"),
+        "@/widgets": path.resolve(__dirname, "..", "..", "src", "widgets"),
+        "@/pages": path.resolve(__dirname, "..", "..", "src", "pages"),
+        "@/app": path.resolve(__dirname, "..", "..", "src", "app"),
+    };
+
     config.resolve!.modules!.push(paths.src);
     config.resolve!.extensions!.push(".ts", ".tsx");
 

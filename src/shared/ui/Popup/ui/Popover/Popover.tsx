@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Popover as HPopover } from "@headlessui/react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import { DropdownDirection } from "../../../../types/ui";
 import { mapDirectionClass } from "../../styles/const";

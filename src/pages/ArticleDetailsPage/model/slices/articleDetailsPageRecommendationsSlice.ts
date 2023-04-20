@@ -4,8 +4,8 @@ import {
     PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { StateSchema } from "app/providers/StoreProvider";
-import { Article } from "entities/Article";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { Article } from "@/entities/Article";
 
 import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { ArticleDetailsPageRecommendationsSchema } from "../types/ArticleDetailsPageRecommendationsSchema";

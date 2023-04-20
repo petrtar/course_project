@@ -1,12 +1,12 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProviders";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProviders";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
 
-import avatar from "shared/assets/tests/avatar.jpg";
+import avatar from "@/shared/assets/tests/avatar.jpg";
 import ProfilePage from "./ProfilePage";
 
 const profileData = {

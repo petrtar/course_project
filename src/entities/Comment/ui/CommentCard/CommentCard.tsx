@@ -1,12 +1,12 @@
 import { FC, memo } from "react";
-import { RouterPath } from "shared/config/routeConfig/routeConfig";
+import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 
-import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink } from "shared/ui/AppLink/AppLink";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { VStack } from "shared/ui/Stack";
-import { Text } from "shared/ui/Text/Text";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { VStack } from "@/shared/ui/Stack";
+import { Text } from "@/shared/ui/Text/Text";
 
 import { Comment } from "../../model/types/comment";
 

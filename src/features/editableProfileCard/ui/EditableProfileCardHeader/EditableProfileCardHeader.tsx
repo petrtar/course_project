@@ -2,12 +2,12 @@ import { FC, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Text } from "shared/ui/Text/Text";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { getUserAuthData } from "entities/User";
-import { HStack } from "shared/ui/Stack";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Text } from "@/shared/ui/Text/Text";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
+import { getUserAuthData } from "@/entities/User";
+import { HStack } from "@/shared/ui/Stack";
 
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
