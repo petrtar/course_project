@@ -38,7 +38,7 @@ export const Dropdown: FC<DropdownProps> = ({
         >
             <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-                {items.map((item) => {
+                {items.map((item, i) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             onClick={item.onClick}
@@ -58,13 +58,18 @@ export const Dropdown: FC<DropdownProps> = ({
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
+                                key={`dropdown_key_${i}`}
                             >
                                 {content}
                             </Menu.Item>
                         );
                     }
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            key={`dropdown_key_${i}`}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     );
