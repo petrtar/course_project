@@ -17,7 +17,7 @@ interface StarRatingProps {
 
 export const StarRating: FC<StarRatingProps> = memo(
     ({ className, size = 30, selectedStars = 0, onSelect }) => {
-        const [currentStarCount, setCurrentStarCount] = useState(0);
+        const [currentStarCount, setCurrentStarCount] = useState(selectedStars);
         const [isSelected, setIsSelected] = useState(!!selectedStars);
 
         const onHover = (starsCount: number) => () => {
