@@ -68,7 +68,7 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "func-names": "off",
         "no-restricted-syntax": "off",
-        "ulbi-tv-plugin/path-checker": "error",
+        "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
     },
     globals: {
         __IS_DEV__: true,
