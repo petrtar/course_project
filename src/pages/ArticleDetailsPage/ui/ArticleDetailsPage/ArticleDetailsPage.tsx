@@ -7,7 +7,7 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 import { VStack } from "@/shared/ui/Stack";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 
@@ -15,7 +15,6 @@ import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 
-import cls from "./ArticleDetailsPage.module.scss";
 import { ArticleRating } from "@/features/articleRating";
 
 const reducers: ReducerList = {
