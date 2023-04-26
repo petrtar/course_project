@@ -19,7 +19,6 @@ Normal.args = {
 
   import { Code } from "./Code";
   import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
-  import { Theme } from "app/providers/ThemeProviders";
   
   export default {
     title: "shared/Code",

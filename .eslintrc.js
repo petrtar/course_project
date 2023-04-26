@@ -69,6 +69,13 @@ module.exports = {
         "func-names": "off",
         "no-restricted-syntax": "off",
         "ulbi-tv-plugin/path-checker": ["error", { alias: "@" }],
+        "ulbi-tv-plugin/layer-imports": [
+            "error",
+            {
+                alias: "@",
+                ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+            },
+        ],
         "ulbi-tv-plugin/public-api-imports": [
             "error",
             {

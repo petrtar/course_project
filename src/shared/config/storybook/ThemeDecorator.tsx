@@ -1,5 +1,7 @@
 import { Story } from "@storybook/react";
-import { Theme, ThemeProvider } from "@/app/providers/ThemeProviders";
+import { Theme } from "@/shared/const/theme";
+// eslint-disable-next-line ulbi-tv-plugin/layer-imports
+import { ThemeProvider } from "@/app/providers/ThemeProviders";
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
     return (
