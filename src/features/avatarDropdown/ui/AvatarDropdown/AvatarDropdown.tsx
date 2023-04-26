@@ -7,10 +7,10 @@ import {
     isUserManager,
     userActions,
 } from "@/entities/User";
-import { RouterPath } from "@/shared/config/routeConfig/routeConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Dropdown } from "@/shared/ui/Popup";
+import { RouterPath } from "@/shared/const/router";
 
 interface AvatarDropdownProps {
     className?: string;
