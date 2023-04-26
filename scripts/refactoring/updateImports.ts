@@ -6,7 +6,6 @@ project.addSourceFilesAtPaths("src/**/*.ts");
 project.addSourceFilesAtPaths("src/**/*.tsx");
 
 const files = project.getSourceFiles();
-console.log("🚀 ~ files:", files);
 
 function isAbsolute(value: string) {
     const layers = [

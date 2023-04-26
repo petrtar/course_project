@@ -8,7 +8,7 @@ import {
     userActions,
 } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popup";
 import { RouterPath } from "@/shared/const/router";
 
