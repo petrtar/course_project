@@ -125,7 +125,8 @@
     "react-i18next": "^11.18.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "storybook-addon-themes": "^6.1.0"
   },
   "loki": {
     "configurations": {
