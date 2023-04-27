@@ -10,7 +10,7 @@ import { Text } from "@/shared/ui/Text";
 import { Comment } from "../../model/types/comment";
 
 import cls from "./CommentCard.module.scss";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteProfile } from "@/shared/const/router";
 
 interface CommentCardProps {
     className?: string;
@@ -52,7 +52,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
                 className={classNames(cls.CommentCard, {}, [className])}
             >
                 <AppLink
-                    to={`${RouterPath.profile}${comment.user.id}`}
+                    to={getRouteProfile(comment.user.id)}
                     className={cls.header}
                 >
                     {comment.user?.avatar && (

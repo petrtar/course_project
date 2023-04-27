@@ -15,7 +15,7 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 
 import cls from "./ArticleListItem.module.scss";
 import { ArticleBlockType, ArticleView } from "../../model/const/const";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 
 interface ArticleListItemProps {
     className?: string;
@@ -72,7 +72,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
                         <div className={cls.footer}>
                             <AppLink
                                 target={target}
-                                to={RouterPath.article_details + article.id}
+                                to={getRouteArticleDetails(article.id)}
                             >
                                 <Button theme={ButtonTheme.OUTLINE}>
                                     {t("Читать далее...")}
@@ -88,7 +88,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
         return (
             <AppLink
                 target={target}
-                to={RouterPath.article_details + article.id}
+                to={getRouteArticleDetails(article.id)}
                 className={classNames("", {}, [className, cls[view]])}
             >
                 <Card>
