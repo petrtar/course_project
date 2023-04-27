@@ -1,30 +1,35 @@
 /* eslint-disable i18next/no-literal-string */
 import { FC } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/shared/ui/Button";
-import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
-import { counterActions } from "../model/slice/counterSlice";
+import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
+import { useCounterActions } from "../model/slice/counterSlice";
 
 export const Counter: FC = () => {
-    const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const counterValue = useCounterValue();
+    const { increment, decrement, add } = useCounterActions();
+
+    const handleIncrement = () => {
+        increment();
     };
 
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const handleDecrement = () => {
+        decrement();
+    };
+
+    const handleFive = () => {
+        add(5);
     };
 
     return (
         <div>
             <h1 data-testid='value-title'>{counterValue}</h1>
-            <Button data-testid='increment-btn' onClick={increment}>
+            <Button data-testid='increment-btn' onClick={handleIncrement}>
                 increment
             </Button>
-            <Button data-testid='decrement-btn' onClick={decrement}>
+            <Button data-testid='decrement-btn' onClick={handleDecrement}>
                 decrement
             </Button>
+            <Button onClick={handleFive}>add</Button>
         </div>
     );
 };
