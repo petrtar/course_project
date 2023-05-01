@@ -5,7 +5,6 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 
-import avatar from "@/shared/assets/tests/avatar.jpg";
 import ProfilePage from "./ProfilePage";
 import { Theme } from "@/shared/const/theme";
 
@@ -18,7 +17,7 @@ const profileData = {
         city: "Biysk",
         username: "Admin",
         currency: Currency.USD,
-        avatar,
+        avatar: "https://cs10.pikabu.ru/images/community/2064/1605883416236930302.png",
     },
 };
 
