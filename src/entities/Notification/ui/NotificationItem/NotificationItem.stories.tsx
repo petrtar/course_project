@@ -2,6 +2,13 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { NotificationItem } from "./NotificationItem";
 
+const notificationItem = {
+    id: "1",
+    title: "Уведомление 1",
+    description: "Описание уведомления",
+    userId: "1",
+};
+
 export default {
     title: "shared/NotificationItem",
     component: NotificationItem,
@@ -15,4 +22,6 @@ const Template: ComponentStory<typeof NotificationItem> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+    item: notificationItem,
+};
