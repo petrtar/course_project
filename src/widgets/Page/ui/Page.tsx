@@ -11,15 +11,16 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitial
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 
 import cls from "./Page.module.scss";
+import { TestsProps } from "@/shared/types/tests";
 
-interface PageProps {
+interface PageProps extends TestsProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
 }
 
 export const Page: FC<PageProps> = memo(
-    ({ className, children, onScrollEnd }) => {
+    ({ className, children, onScrollEnd, "data-testid": dataTestid }) => {
         const dispatch = useAppDispatch();
         const { pathname } = useLocation();
 
@@ -54,6 +55,7 @@ export const Page: FC<PageProps> = memo(
                 onScroll={onScroll}
                 ref={wrapperRef}
                 className={classNames(cls.Page, {}, [className])}
+                data-testid={dataTestid ?? "Page"}
             >
                 {children}
                 {!!onScrollEnd && (
