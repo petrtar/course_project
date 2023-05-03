@@ -66,6 +66,7 @@ module.exports = {
         "react/no-array-index-key": "off",
         "arrow-body-style": "off",
         "no-restricted-globals": "off",
+        "@typescript-eslint/no-namespace": "off",
         "react/jsx-no-useless-fragment": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "func-names": "off",
