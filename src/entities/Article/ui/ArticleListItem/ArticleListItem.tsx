@@ -45,7 +45,10 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
                 (block) => block.type === ArticleBlockType.TEXT
             ) as ArticleTextBlock;
             return (
-                <div className={classNames("", {}, [className, cls[view]])}>
+                <div
+                    data-testid='ArticleListItem'
+                    className={classNames("", {}, [className, cls[view]])}
+                >
                     <Card>
                         <div className={cls.header}>
                             <Avatar size={30} src={article.user.avatar} />
@@ -90,6 +93,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
 
         return (
             <AppLink
+                data-testid='ArticleListItem'
                 target={target}
                 to={getRouteArticleDetails(article.id)}
                 className={classNames("", {}, [className, cls[view]])}

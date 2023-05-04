@@ -66,6 +66,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
                     className,
                     cls[view],
                 ])}
+                data-testid='ArticleList'
             >
                 {articles.length ? articles.map(renderArticle) : null}
                 {isLoading && getSkeleton(view)}
