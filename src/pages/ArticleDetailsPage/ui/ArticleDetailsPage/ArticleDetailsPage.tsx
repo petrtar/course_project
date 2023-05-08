@@ -16,6 +16,8 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 
 import { ArticleRating } from "@/features/articleRating";
+import { getFeatureFlags } from "@/shared/lib/features";
+import { Counter } from "@/entities/Counter";
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -27,6 +29,9 @@ interface ArticleDetailsPageProps {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     const { id } = useParams<{ id: string }>();
 
+    const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
+    const isCounterEnabled = getFeatureFlags("isCounterEnabled");
+
     if (!id) return null;
 
     return (
@@ -35,7 +40,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {isCounterEnabled && <Counter />}
+                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
