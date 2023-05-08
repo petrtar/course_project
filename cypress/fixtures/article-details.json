@@ -6,9 +6,7 @@
     "views": 100,
     "createdAt": "21.02.2022",
     "userId": "1",
-    "type": [
-        "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
         {
             "id": "1",
@@ -25,9 +23,7 @@
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": [
-            "ADMIN"
-        ],
+        "roles": ["ADMIN"],
         "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     }
 }

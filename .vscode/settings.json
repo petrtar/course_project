@@ -1,8 +1,5 @@
 {
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
+    "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "i18n-ally.sourceLanguage": "ru",
     "css.validate": false,
     "less.validate": false,
@@ -13,22 +10,15 @@
         "source.fixAll.stylelint": true
     },
     "i18n-ally.extract.ignoredByFiles": {
-        "src/pages/AboutPage/ui/AboutPage.tsx": [
-            "О сайте",
-            "О сайте"
-        ],
+        "src/pages/AboutPage/ui/AboutPage.tsx": ["О сайте", "О сайте"],
         "src/pages/NotFoundPage/ui/NotFoundPage.tsx": [
             "Страница не найдена",
             "Страница не найдена"
         ],
-        "src/shared/config/routeConfig/routeConfig.tsx": [
-            "*"
-        ],
+        "src/shared/config/routeConfig/routeConfig.tsx": ["*"],
         "src/widgets/PageError/ui/PageError.tsx": [
             "Произошла непредвиденная ошибка"
         ]
     },
-    "cSpell.words": [
-        "inited"
-    ]
+    "cSpell.words": ["inited"]
 }

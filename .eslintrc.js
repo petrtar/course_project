@@ -29,8 +29,6 @@ module.exports = {
         "unused-imports",
     ],
     rules: {
-        "react/jsx-indent": [2, 4],
-        "react/jsx-indent-props": [2, 4],
         "unused-imports/no-unused-imports": "error",
         "react/jsx-filename-extension": [
             2,
@@ -48,6 +46,7 @@ module.exports = {
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
         "react/prop-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "i18next/no-literal-string": [
             "error",
             {
