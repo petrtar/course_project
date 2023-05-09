@@ -1,6 +1,7 @@
 import { FC, memo } from "react";
 import { useParams } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { ArticleDetails } from "@/entities/Article";
 import {
@@ -16,8 +17,8 @@ import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDet
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 
 import { ArticleRating } from "@/features/articleRating";
-import { getFeatureFlags } from "@/shared/lib/features";
-import { Counter } from "@/entities/Counter";
+import { toggleFeatures } from "@/shared/lib/features";
+import { Card } from "@/shared/ui/Card";
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -27,12 +28,16 @@ interface ArticleDetailsPageProps {
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
+    const { t } = useTranslation("article");
     const { id } = useParams<{ id: string }>();
 
-    const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
-    const isCounterEnabled = getFeatureFlags("isCounterEnabled");
-
     if (!id) return null;
+
+    const ratingRatingCard = toggleFeatures({
+        name: "isArticleRatingEnabled",
+        on: () => <ArticleRating articleId={id} />,
+        off: () => <Card>{t("Оценка статей скоро появится")}</Card>,
+    });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -40,8 +45,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
                 <VStack gap='16' max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {isCounterEnabled && <Counter />}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+                    {ratingRatingCard}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

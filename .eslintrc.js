@@ -47,6 +47,7 @@ module.exports = {
         "no-underscore-dangle": "off",
         "react/prop-types": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "react/no-unstable-nested-components": "warn",
         "i18next/no-literal-string": [
             "error",
             {
