@@ -8,9 +8,10 @@ import {
     userActions,
 } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Dropdown } from "@/shared/ui/Popup";
+
 import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
+import { Dropdown } from "@/shared/ui/deprecated/Popup";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
 
 interface AvatarDropdownProps {
     className?: string;

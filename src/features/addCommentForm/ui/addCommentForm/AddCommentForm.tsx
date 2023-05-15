@@ -7,9 +7,6 @@ import {
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { HStack } from "@/shared/ui/Stack";
 
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
@@ -18,6 +15,9 @@ import {
 } from "../../model/slices/addCommentFormSlice";
 
 import cls from "./AddCommentForm.module.scss";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 
 const reducers: ReducerList = {
     AddCommentForm: addCommentFormReducer,

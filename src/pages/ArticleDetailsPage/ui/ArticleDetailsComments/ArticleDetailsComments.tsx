@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { CommentList } from "@/entities/Comment";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextSize } from "@/shared/ui/Text";
+import { Text, TextSize } from "@/shared/ui/deprecated/Text";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 
-import { VStack } from "@/shared/ui/Stack";
-import { Loader } from "@/shared/ui/Loader";
 import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments/comments";
 import { addCommentFormArticle } from "../../model/services/addCommentFormArticle/addCommentFormArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { VStack } from "@/shared/ui/deprecated/Stack";
+import { Loader } from "@/shared/ui/deprecated/Loader";
 
 interface ArticleDetailsCommentsProps {
     className?: string;

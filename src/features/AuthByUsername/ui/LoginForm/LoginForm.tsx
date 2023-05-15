@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { Text, TextTheme } from "@/shared/ui/Text";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
 import {
     DynamicModuleLoader,
     ReducerList,
@@ -20,6 +18,8 @@ import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLo
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 
 import cls from "./LoginForm.module.scss";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 
 const InitialReducers: ReducerList = {
     loginForm: loginReducer,

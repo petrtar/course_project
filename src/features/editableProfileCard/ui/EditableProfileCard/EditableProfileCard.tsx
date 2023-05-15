@@ -7,8 +7,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { VStack } from "@/shared/ui/Stack";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
 import { ProfileCard } from "@/entities/Profile";
 
 import {
@@ -24,6 +23,7 @@ import { fetchProfileData } from "../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from "../../model/slice/ProfileSlice";
 import { EditableProfileHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 import { ValidateProfileError } from "../../model/consts/consts";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 
 const reducers: ReducerList = {
     profile: profileReducer,

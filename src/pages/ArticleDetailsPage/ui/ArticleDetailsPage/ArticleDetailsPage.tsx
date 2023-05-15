@@ -9,7 +9,6 @@ import {
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Page } from "@/widgets/Page";
-import { VStack } from "@/shared/ui/Stack";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 
 import { articleDetailsPageReducer } from "../../model/slices";
@@ -18,7 +17,8 @@ import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetails
 
 import { ArticleRating } from "@/features/articleRating";
 import { ToggleFeatures } from "@/shared/lib/features";
-import { Card } from "@/shared/ui/Card";
+import { VStack } from "@/shared/ui/deprecated/Stack";
+import { Card } from "@/shared/ui/deprecated/Card";
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,

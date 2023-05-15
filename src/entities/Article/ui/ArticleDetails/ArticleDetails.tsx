@@ -8,15 +8,12 @@ import {
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
-import { Icon } from "@/shared/ui/Icon";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Text, TextAlign, TextSize } from "@/shared/ui/deprecated/Text";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import CalendarIcon from "@/shared/assets/icons/calendar.svg";
 
-import { HStack, VStack } from "@/shared/ui/Stack";
 import {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -31,6 +28,9 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import { ArticleBlockType } from "../../model/const/const";
 
 import cls from "./ArticleDetails.module.scss";
+import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Icon } from "@/shared/ui/deprecated/Icon";
 
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
