@@ -5,10 +5,6 @@ interface PortalProps {
     children: ReactNode;
 }
 
-/**
- * Устарел, используем новый компонент из папки redesigned
- * @deprecated
- */
 export const Portal: FC<PortalProps> = ({ children }) => {
     const ref = useRef<Element | null>(null);
     const [mounted, setMounted] = useState(false);

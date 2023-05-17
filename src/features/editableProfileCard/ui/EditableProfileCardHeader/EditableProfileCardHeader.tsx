@@ -11,8 +11,8 @@ import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/get
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
 import { profileActions } from "../../model/slice/ProfileSlice";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
-import { HStack } from "@/shared/ui/deprecated/Stack";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 interface ProfilePageHeaderProps {
     className?: string;

@@ -5,7 +5,7 @@ import { useNotifications } from "../../api/notificationApi";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
 
 import cls from "./NotificationList.module.scss";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface NotificationListProps {
     className?: string;

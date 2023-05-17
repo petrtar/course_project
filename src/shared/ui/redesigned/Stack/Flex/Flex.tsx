@@ -48,11 +48,6 @@ export interface FlexProps extends DivProps {
     max?: boolean;
 }
 
-/**
- * Устарел, используем новый компонент из папки redesigned
- * @deprecated
- */
-
 export const Flex: FC<FlexProps> = ({
     className,
     children,

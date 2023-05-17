@@ -9,10 +9,10 @@ import { Country, CountrySelect } from "@/entities/Country";
 import { Profile } from "../../model/types/profile";
 
 import cls from "./ProfileCard.module.scss";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import { Input } from "@/shared/ui/deprecated/Input";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ProfileCardProps {
     className?: string;

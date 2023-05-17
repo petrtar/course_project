@@ -17,8 +17,8 @@ import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetails
 
 import { ArticleRating } from "@/features/articleRating";
 import { ToggleFeatures } from "@/shared/lib/features";
-import { VStack } from "@/shared/ui/deprecated/Stack";
 import { Card } from "@/shared/ui/deprecated/Card";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,

@@ -15,9 +15,9 @@ import {
 } from "../../model/slices/addCommentFormSlice";
 
 import cls from "./AddCommentForm.module.scss";
-import { HStack } from "@/shared/ui/deprecated/Stack";
 import { Input } from "@/shared/ui/deprecated/Input";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 const reducers: ReducerList = {
     AddCommentForm: addCommentFormReducer,

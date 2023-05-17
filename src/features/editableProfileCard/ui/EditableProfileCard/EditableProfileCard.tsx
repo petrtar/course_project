@@ -23,7 +23,7 @@ import { fetchProfileData } from "../../model/services/fetchProfileData/fetchPro
 import { profileActions, profileReducer } from "../../model/slice/ProfileSlice";
 import { EditableProfileHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 import { ValidateProfileError } from "../../model/consts/consts";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 const reducers: ReducerList = {
     profile: profileReducer,

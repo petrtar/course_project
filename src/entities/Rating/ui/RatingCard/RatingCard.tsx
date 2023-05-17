@@ -6,10 +6,10 @@ import { Text } from "@/shared/ui/deprecated/Text";
 import { StarRating } from "@/shared/ui/deprecated/StarRating";
 import { Input } from "@/shared/ui/deprecated/Input";
 import { Card } from "@/shared/ui/deprecated/Card";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 import { Modal } from "@/shared/ui/deprecated/Modal";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 interface RatingCardProps {
     className?: string;

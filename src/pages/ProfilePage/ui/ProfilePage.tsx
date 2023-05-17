@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Page } from "@/widgets/Page";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { EditableProfileCard } from "@/features/editableProfileCard";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ProfilePageProps {
     className?: string;

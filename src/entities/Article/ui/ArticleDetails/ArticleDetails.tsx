@@ -28,9 +28,9 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import { ArticleBlockType } from "../../model/const/const";
 
 import cls from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import { Icon } from "@/shared/ui/deprecated/Icon";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,

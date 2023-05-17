@@ -12,8 +12,8 @@ import { getArticleComments } from "../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments/comments";
 import { addCommentFormArticle } from "../../model/services/addCommentFormArticle/addCommentFormArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { VStack } from "@/shared/ui/deprecated/Stack";
 import { Loader } from "@/shared/ui/deprecated/Loader";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ArticleDetailsCommentsProps {
     className?: string;

@@ -1,0 +1,8 @@
+.panel {
+    background: var(--dark-bg-redesigned);
+    position: absolute;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
