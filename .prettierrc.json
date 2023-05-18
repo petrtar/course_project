@@ -3,5 +3,6 @@
     "jsxSingleQuote": true,
     "arrowParens": "always",
     "tabWidth": 4,
-    "useTabs": false
+    "useTabs": false,
+    "endOfLine": "crlf"
 }
