@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { <FTName> } from "./[FTName]";
-import { ThemeDecorator } from "@/[/FTName]shared/config/storybook/ThemeDecorator";
+import { ThemeDecorator } from "@/[FTName]shared/config/storybook/ThemeDecorator";
 
 export default {
   title: "shared/<FTName>",
