@@ -4,5 +4,5 @@
     "arrowParens": "always",
     "tabWidth": 4,
     "useTabs": false,
-    "endOfLine": "crlf"
+    "endOfLine": "auto"
 }

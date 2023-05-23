@@ -9,7 +9,7 @@ import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { ArticleSortField, ArticleType } from "@/entities/Article";
 import { SortOrder } from "@/shared/types/sort";
-import { Input } from "@/shared/ui/deprecated/Input";
+import { Input } from "@/shared/ui/redesigned/Input";
 
 interface ArticledFiltersProps {
     className?: string;
@@ -48,17 +48,16 @@ export const ArticlesFilters: FC<ArticledFiltersProps> = memo(
                         value={search}
                         onChange={onChangeSearch}
                     />
+                    <ArticleTypeTabs
+                        onChangeType={onChangeType}
+                        value={type}
+                        className={cls.tabs}
+                    />
                     <ArticleSortSelector
                         order={order}
                         sort={sort}
                         onChangeOrder={onChangeOrder}
                         onChangeSort={onChangeSort}
-                    />
-
-                    <ArticleTypeTabs
-                        onChangeType={onChangeType}
-                        value={type}
-                        className={cls.tabs}
                     />
                 </VStack>
             </Card>
