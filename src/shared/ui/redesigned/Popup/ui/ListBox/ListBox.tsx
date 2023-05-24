@@ -8,6 +8,8 @@ import { Button } from "../../../Button/Button";
 import { mapDirectionClass } from "../../styles/const";
 import popupCls from "../../styles/popup.module.scss";
 import { HStack } from "../../../../redesigned/Stack";
+import ArrowIcon from "@/shared/assets/icons/arrow-default.svg";
+import { Icon } from "../../../Icon";
 
 export interface ListBoxItem<T extends string> {
     value: T;
@@ -53,7 +55,11 @@ export const ListBox = <T extends string>({
                 onChange={onChange}
             >
                 <HListBox.Button className={cls.trigger}>
-                    <Button variant='filled' disabled={readonly}>
+                    <Button
+                        variant='filled'
+                        disabled={readonly}
+                        addonRight={<Icon Svg={ArrowIcon} />}
+                    >
                         {selectItem?.content ?? defaultValue}
                     </Button>
                 </HListBox.Button>

@@ -25,8 +25,8 @@ export const Icon: FC<IconProps> = memo((props) => {
     const {
         className,
         Svg,
-        width = 20,
-        height = 20,
+        width = 30,
+        height = 30,
         clickable,
         ...otherProps
     } = props;
