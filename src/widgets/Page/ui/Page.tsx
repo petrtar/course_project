@@ -34,7 +34,11 @@ export const Page: FC<PageProps> = memo(
 
         useInfiniteScroll({
             triggerRef,
-            wrapperRef,
+            wrapperRef: toggleFeatures({
+                name: "isAppRedesigned",
+                on: () => undefined,
+                off: () => wrapperRef,
+            }),
             callback: onScrollEnd,
         });
 
