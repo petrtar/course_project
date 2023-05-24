@@ -17,5 +17,10 @@
     "Данные не указаны": "Data is empty",
     "Имя и фамилия обязательны": "First and last name are required",
     "Некорректный возраст": "Incorrect age",
-    "Профиль не найден": "Profile not found"
+    "Профиль не найден": "Profile not found",
+    "Ссылка на аватар": "Link to avatar",
+    "Имя пользователя": "Username",
+    "Возраст": "Age",
+    "Фамилия": "Surname",
+    "Имя": "Name"
 }
