@@ -1,11 +1,14 @@
 import { FC, memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
+import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { ArticleView } from "../../model/const/const";
 
 import cls from "./ArticleListItem.module.scss";
-import { Card } from "@/shared/ui/deprecated/Card";
+import { Card as CartDeprecated } from "@/shared/ui/deprecated/Card";
+import { Card as CardRedesigned } from "@/shared/ui/redesigned/Card";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface ArticleListItemSkeletonProps {
     className?: string;
@@ -14,6 +17,18 @@ interface ArticleListItemSkeletonProps {
 
 export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
     ({ className, view }) => {
+        const Skeleton = toggleFeatures({
+            name: "isAppRedesigned",
+            on: () => SkeletonRedesigned,
+            off: () => SkeletonDeprecated,
+        });
+
+        const Card = toggleFeatures({
+            name: "isAppRedesigned",
+            on: () => CardRedesigned,
+            off: () => CartDeprecated,
+        });
+
         if (view === ArticleView.BIG) {
             return (
                 <div className={classNames("", {}, [className, cls[view]])}>
@@ -36,7 +51,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
                             width={250}
                             className={cls.title}
                         />
-                        <Skeleton height={24} className={cls.img} />
+                        <Skeleton height={200} className={cls.img} />
                         <div className={cls.footer}>
                             <Skeleton height={36} width={200} />
                         </div>
