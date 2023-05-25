@@ -1,6 +1,6 @@
 import { FC, Suspense } from "react";
 import { Loader } from "@/shared/ui/deprecated/Loader";
-import { Modal } from "@/shared/ui/deprecated/Modal";
+import { Modal } from "@/shared/ui/redesigned/Modal";
 
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 

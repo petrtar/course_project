@@ -12,7 +12,7 @@ import {
     ButtonTheme,
 } from "@/shared/ui/deprecated/Button";
 import { Icon as IconDeprecated } from "@/shared/ui/deprecated/Icon";
-import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { Popover as PopoverDerpecated } from "@/shared/ui/deprecated/Popup";
 import { Icon } from "@/shared/ui/redesigned/Icon";
