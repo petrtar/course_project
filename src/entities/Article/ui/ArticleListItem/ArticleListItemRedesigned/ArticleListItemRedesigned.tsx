@@ -25,7 +25,11 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
 
         const userInfo = (
             <>
-                <Avatar size={32} src={article.user.avatar} />
+                <Avatar
+                    size={32}
+                    src={article.user.avatar}
+                    className={cls.avatar}
+                />
                 <Text bold text={article.user.username} />
             </>
         );
@@ -89,12 +93,12 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
                 to={getRouteArticleDetails(article.id)}
                 className={classNames("", {}, [className, cls[view]])}
             >
-                <Card className={cls.card} border='round'>
+                <Card className={cls.card} border='round' padding='0'>
                     <AppImage
                         src={article.img}
                         alt={article.title}
                         className={cls.img}
-                        fallback={<Skeleton width='200px' height='200px' />}
+                        fallback={<Skeleton width='100%' height='200px' />}
                     />
 
                     <VStack className={cls.info} gap='4'>
