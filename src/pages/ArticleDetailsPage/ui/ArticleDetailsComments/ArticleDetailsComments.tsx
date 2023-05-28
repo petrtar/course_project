@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { CommentList } from "@/entities/Comment";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextSize } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated, TextSize } from "@/shared/ui/deprecated/Text";
+import { Text } from "@/shared/ui/redesigned/Text";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
@@ -14,6 +15,7 @@ import { addCommentFormArticle } from "../../model/services/addCommentFormArticl
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { VStack } from "@/shared/ui/redesigned/Stack";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -40,7 +42,17 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
         );
         return (
             <VStack gap='8' max className={classNames("", {}, [className])}>
-                <Text size={TextSize.L} title={t("Комментарии")} />
+                <ToggleFeatures
+                    feature='isArticleRatingEnabled'
+                    on={<Text size='l' title={t("Комментарии")} />}
+                    off={
+                        <TextDeprecated
+                            size={TextSize.L}
+                            title={t("Комментарии")}
+                        />
+                    }
+                />
+
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={onSendComment} />
                 </Suspense>

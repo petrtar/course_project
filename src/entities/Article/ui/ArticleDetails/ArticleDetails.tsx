@@ -9,6 +9,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch";
 import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton";
+import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import {
     Text as TextDeprecated,
     TextAlign,
@@ -32,9 +33,8 @@ import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import { Icon } from "@/shared/ui/deprecated/Icon";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { RenderArticleBlock } from "./RenderBlock";
-import { ToggleFeatures } from "@/shared/lib/features";
+import { toggleFeatures, ToggleFeatures } from "@/shared/lib/features";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
-import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
@@ -82,7 +82,13 @@ const Redesigned = () => {
             <Text title={article?.title} size='l' bold />
             <Text title={article?.subtitle} />
             <AppImage
-                fallback={<Skeleton width='100%' height={420} border='16px' />}
+                fallback={
+                    <SkeletonRedesigned
+                        width='100%'
+                        height={420}
+                        border='16px'
+                    />
+                }
                 src={article?.img}
                 className={cls.img}
             />
@@ -91,6 +97,12 @@ const Redesigned = () => {
         </>
     );
 };
+
+const Skeleton = toggleFeatures({
+    name: "isAppRedesigned",
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+});
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo(
     ({ className, id }) => {
@@ -108,18 +120,18 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
 
         if (isLoading) {
             content = (
-                <>
-                    <SkeletonDeprecated
+                <VStack gap='16' max>
+                    <Skeleton
                         className={cls.avatar}
                         width={200}
                         height={200}
                         border='50%'
                     />
-                    <SkeletonDeprecated width={300} height={32} />
-                    <SkeletonDeprecated width={600} height={24} />
-                    <SkeletonDeprecated width='100%' height={200} />
-                    <SkeletonDeprecated width='100%' height={200} />
-                </>
+                    <Skeleton width={300} height={32} />
+                    <Skeleton width={600} height={24} />
+                    <Skeleton width='100%' height={200} />
+                    <Skeleton width='100%' height={200} />
+                </VStack>
             );
         } else if (error) {
             content = (
