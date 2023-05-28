@@ -11,7 +11,7 @@ export const DetailsContainer: FC<DetailsContainerProps> = memo(
     ({ className }) => {
         const { id } = useParams<{ id: string }>();
         return (
-            <Card max border='round' className={className} padding='24'>
+            <Card max border='partial' className={className} padding='24'>
                 <ArticleDetails id={id} />
             </Card>
         );

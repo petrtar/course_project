@@ -197,7 +197,7 @@ export const RatingCard: FC<RatingCardProps> = memo(
                         padding='24'
                         className={className}
                         max
-                        border='round'
+                        border='partial'
                         data-testid='RatingCard'
                     >
                         {content}
