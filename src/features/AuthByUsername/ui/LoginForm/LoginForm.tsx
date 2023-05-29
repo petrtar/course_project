@@ -28,6 +28,7 @@ import {
 } from "@/shared/ui/deprecated/Button";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { VStack } from "@/shared/ui/redesigned/Stack";
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 
 const InitialReducers: ReducerList = {
     loginForm: loginReducer,
@@ -47,6 +48,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ onSuccess, className }) => {
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
+    const forceUpdate = useForceUpdate();
 
     const onChangeUsername = useCallback(
         (value: string) => {
@@ -66,8 +68,9 @@ const LoginForm: FC<LoginFormProps> = memo(({ onSuccess, className }) => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === "fulfilled") {
             onSuccess();
+            forceUpdate();
         }
-    }, [onSuccess, dispatch, username, password]);
+    }, [dispatch, username, password, onSuccess, forceUpdate]);
 
     return (
         <DynamicModuleLoader reducers={InitialReducers} removeAfterUnmount>

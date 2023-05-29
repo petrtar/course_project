@@ -58,9 +58,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                     </header>
                 }
                 off={
-                    <header
-                        className={classNames(cls.mainClass, {}, [className])}
-                    >
+                    <header className={classNames(mainClass, {}, [className])}>
                         <Text
                             className={cls.appName}
                             title={t("Ulbi TV App")}
