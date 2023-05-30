@@ -677,7 +677,8 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "isArticlePageWasOpened": true
+        "isArticlePageWasOpened": true,
+        "theme": "app_dark_theme"
       }
     },
     {
