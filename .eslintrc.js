@@ -101,7 +101,7 @@ module.exports = {
             rules: {
                 "i18next/no-literal-string": "off",
                 "max-len": "off",
-                "linebreak-style": ["error", "unix"],
+                "linebreak-style": "off",
             },
         },
     ],

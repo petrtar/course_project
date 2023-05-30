@@ -3,6 +3,9 @@ import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 
 import { ProfileCard } from "./ProfileCard";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { Theme } from "@/shared/const/theme";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator";
 
 export default {
     title: "entities/ProfileCard",
@@ -16,8 +19,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
     <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const PrimaryArgs = {
     data: {
         name: "Petr",
         age: 30,
@@ -29,6 +31,13 @@ Primary.args = {
         avatar: "https://cs10.pikabu.ru/images/community/2064/1605883416236930302.png",
     },
 };
+
+export const Primary = Template.bind({});
+Primary.args = PrimaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = PrimaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
 
 export const withError = Template.bind({});
 withError.args = {

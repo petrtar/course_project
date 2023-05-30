@@ -4,6 +4,7 @@ import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator";
 import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator";
 import { SuspenseDecorator } from "../../src/shared/config/storybook/SuspenseDecorator";
+import { FeaturesFlagDecorator } from "../../src/shared/config/storybook/FeaturesFlagDecorator";
 
 import { Theme } from "../../src/shared/const/theme";
 
@@ -29,3 +30,4 @@ addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
+addDecorator(FeaturesFlagDecorator({}));
